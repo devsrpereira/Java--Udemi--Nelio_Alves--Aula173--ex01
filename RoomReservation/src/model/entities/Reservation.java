@@ -28,16 +28,9 @@ public class Reservation {
     public LocalDate getChecin() {
         return checkin;
     }
-    public void setChecin(LocalDate checin) {
-        this.checkin = checin;
-    }
     public LocalDate getCheckout() {
         return checkout;
     }
-    public void setCheckout(LocalDate checkout) {
-        this.checkout = checkout;
-    }
-
 
     public long duration(){
         Duration t1 = Duration.between(checkin.atStartOfDay(), checkout.atStartOfDay());
@@ -52,5 +45,13 @@ public class Reservation {
                 + ", check-out: " + String.format(dtf1.format(checkout))
                 + ", " + duration() + " nights.";
     }
+
+    public void updateDate(LocalDate checkin, LocalDate checkout){
+        this.checkin = checkin;
+        this.checkout = checkout;
+    }
+
+
+
 }
 

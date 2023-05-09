@@ -31,8 +31,7 @@ public class Program {
         System.out.print("Check-out date (dd/mm/yyyy): ");
         checkout = LocalDate.parse(sc.next(),dtf1);
 
-        reservation.setChecin(checkin);
-        reservation.setCheckout(checkout);
+        reservation.updateDate(checkin,checkout);
         System.out.println(reservation);
 
 
