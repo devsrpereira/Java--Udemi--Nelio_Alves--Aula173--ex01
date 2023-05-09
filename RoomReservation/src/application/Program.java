@@ -26,8 +26,14 @@ public class Program {
 
         System.out.println();
         System.out.println("Enter data to update the reservation:");
+        System.out.print("Check-in date (dd/mm/yyyy): ");
+        checkin = LocalDate.parse(sc.next(),dtf1);
+        System.out.print("Check-out date (dd/mm/yyyy): ");
+        checkout = LocalDate.parse(sc.next(),dtf1);
 
-
+        reservation.setChecin(checkin);
+        reservation.setCheckout(checkout);
+        System.out.println(reservation);
 
 
         sc.close();
