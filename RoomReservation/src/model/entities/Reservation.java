@@ -46,9 +46,19 @@ public class Reservation {
                 + ", " + duration() + " nights.";
     }
 
-    public void updateDate(LocalDate checkin, LocalDate checkout){
+    public String updateDate(LocalDate checkin, LocalDate checkout){
+        LocalDate now = LocalDate.now();
+
+        if (checkin.isBefore(now) || checkout.isBefore(now)){
+            return "Reservation date for update must be future dates.";
+        }
+        if (!checkout.isAfter(checkin)) {
+            return "Check-out date must be  after  check-in date.";
+        }
+
         this.checkin = checkin;
         this.checkout = checkout;
+        return null;
     }
 
 
